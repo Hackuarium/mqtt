@@ -1,0 +1,35 @@
+version: '3'
+services:
+  node-red:
+    build: node-red/.
+    ports:
+      - '1880:1880'
+    volumes:
+      - ./node-red/data:/data
+  mongo:
+    image: 'mongo'
+    expose:
+      - 27017
+  mosca:
+    image: 'matteocollina/mosca'
+    ports:
+      - 1883:1883
+    expose:
+      - 1883
+    volumes:
+      - ./mosca/db:/db
+  influxdb:
+    image: 'influxdb'
+    ports:
+      - 8086:8086
+    expose:
+      - 8086
+    volumes:
+      - ./influxdb/db:/var/lib/influxdb
+    environment:
+      INFLUXDB_DB: data
+      INFLUXDB_HTTP_AUTH_ENABLED: 'true'
+      INFLUXDB_ADMIN_USER: admin
+      INFLUXDB_ADMIN_PASSWORD: admin
+      INFLUXDB_USER: user
+      INFLUXDB_USER_PASSWORD: user
