@@ -2,7 +2,7 @@
  "nodes": {
   "node-red": {
    "name": "node-red",
-   "version": "0.18.7",
+   "version": "0.19.0",
    "local": false,
    "nodes": {
     "sentiment": {
@@ -496,7 +496,7 @@
   },
   "node-red-node-suncalc": {
    "name": "node-red-node-suncalc",
-   "version": "0.0.10",
+   "version": "0.0.11",
    "local": false,
    "nodes": {
     "suncalc": {
@@ -513,7 +513,7 @@
   },
   "node-red-node-twitter": {
    "name": "node-red-node-twitter",
-   "version": "0.1.15",
+   "version": "1.0.1",
    "local": false,
    "nodes": {
     "twitter": {

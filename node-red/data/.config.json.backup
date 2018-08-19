@@ -778,6 +778,23 @@
      "file": "/usr/src/node-red/node_modules/node-red-contrib-influxdb/influxdb.js"
     }
    }
+  },
+  "node-red-contrib-throttle": {
+   "name": "node-red-contrib-throttle",
+   "version": "0.1.6",
+   "local": false,
+   "nodes": {
+    "throttle": {
+     "name": "throttle",
+     "types": [
+      "throttle"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red-contrib-throttle",
+     "file": "/usr/src/node-red/node_modules/node-red-contrib-throttle/throttle.js"
+    }
+   }
   }
  },
  "_credentialSecret": "cee3dacd1becc10e1d546f4b57827d08a9d93f457f52084cb0deb5405966db6d",

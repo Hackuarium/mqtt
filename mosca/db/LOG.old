@@ -1,5 +1,12 @@
-2018/08/18-19:43:13.184732 7f34b5a1bab0 Recovering log #60
-2018/08/18-19:43:13.184955 7f34b5a1bab0 Level-0 table #62: started
-2018/08/18-19:43:13.187753 7f34b5a1bab0 Level-0 table #62: 800 bytes OK
-2018/08/18-19:43:13.206449 7f34b5a1bab0 Delete type=3 #58
-2018/08/18-19:43:13.228282 7f34b5a1bab0 Delete type=0 #60
+2018/08/18-20:04:20.844493 7f0dadd12ab0 Recovering log #66
+2018/08/18-20:04:20.845165 7f0dadd12ab0 Level-0 table #68: started
+2018/08/18-20:04:20.847563 7f0dadd12ab0 Level-0 table #68: 340 bytes OK
+2018/08/18-20:04:20.851929 7f0dadd12ab0 Delete type=3 #64
+2018/08/18-20:04:20.851958 7f0dadd12ab0 Delete type=0 #66
+2018/08/18-20:04:20.858886 7f0dadcb4ab0 Compacting 4@0 + 0@1 files
+2018/08/18-20:04:20.858959 7f0dadcb4ab0 Compacted 4@0 + 0@1 files => 0 bytes
+2018/08/18-20:04:20.870006 7f0dadcb4ab0 compacted to: files[ 0 1 0 0 0 0 0 ]
+2018/08/18-20:04:20.870101 7f0dadcb4ab0 Delete type=2 #59
+2018/08/18-20:04:20.870150 7f0dadcb4ab0 Delete type=2 #62
+2018/08/18-20:04:20.870178 7f0dadcb4ab0 Delete type=2 #65
+2018/08/18-20:04:20.870204 7f0dadcb4ab0 Delete type=2 #68
