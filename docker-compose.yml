@@ -3,7 +3,7 @@ services:
   node-red:
     build: node-red/.
     ports:
-      - '1880:1880'
+      - '127.0.0.1:1880:1880'
     volumes:
       - ./node-red/data:/data
   mongo:
@@ -20,8 +20,6 @@ services:
       - ./mosca/db:/db
   influxdb:
     image: 'influxdb'
-    ports:
-      - 8086:8086
     expose:
       - 8086
     volumes:
