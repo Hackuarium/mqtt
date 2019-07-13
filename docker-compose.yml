@@ -2,16 +2,19 @@ version: '3'
 services:
   node-red:
     build: node-red/.
+    restart: always
     ports:
       - '127.0.0.1:1880:1880'
     volumes:
       - ./node-red/data:/data
   mongo:
     image: 'mongo'
+    restart: always
     expose:
       - 27017
   mosca:
     image: 'matteocollina/mosca'
+    restart: always
     ports:
       - 1883:1883
     expose:
@@ -20,6 +23,7 @@ services:
       - ./mosca/db:/db
   influxdb:
     image: 'influxdb'
+    restart: always
     expose:
       - 8086
     volumes:
