@@ -1,19 +1,19 @@
-version: '3'
+version: "3"
 services:
   node-red:
     build: node-red/.
     restart: always
     ports:
-      - '127.0.0.1:1880:1880'
+      - "127.0.0.1:1880:1880"
     volumes:
       - ./node-red/data:/data
   mongo:
-    image: 'mongo'
+    image: "mongo"
     restart: always
     expose:
       - 27017
   mosca:
-    image: 'matteocollina/mosca'
+    image: "matteocollina/mosca:v2.8.3"
     restart: always
     ports:
       - 1883:1883
@@ -22,15 +22,15 @@ services:
     volumes:
       - ./mosca/db:/db
   influxdb:
-    image: 'influxdb'
+    image: "influxdb"
     restart: always
     expose:
       - 8086
     volumes:
-      - ./influxdb/db:/var/lib/influxdb
+      - ./influxdb/db:/var/lib/influxdb:1.7.9
     environment:
       INFLUXDB_DB: data
-      INFLUXDB_HTTP_AUTH_ENABLED: 'true'
+      INFLUXDB_HTTP_AUTH_ENABLED: "true"
       INFLUXDB_ADMIN_USER: admin
       INFLUXDB_ADMIN_PASSWORD: admin
       INFLUXDB_USER: user
