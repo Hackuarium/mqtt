@@ -7,11 +7,13 @@ services:
       - "127.0.0.1:1880:1880"
     volumes:
       - ./node-red/data:/data
+    user: root
   mongo:
     image: "mongo"
     restart: always
     expose:
       - 27017
+    user: root
   mosca:
     image: "matteocollina/mosca:v2.8.3"
     restart: always
@@ -21,6 +23,7 @@ services:
       - 1883
     volumes:
       - ./mosca/db:/db
+    user: root
   influxdb:
     image: "influxdb"
     restart: always
@@ -35,3 +38,4 @@ services:
       INFLUXDB_ADMIN_PASSWORD: admin
       INFLUXDB_USER: user
       INFLUXDB_USER_PASSWORD: user
+    user: root
