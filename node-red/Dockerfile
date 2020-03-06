@@ -5,3 +5,6 @@ RUN npm install node-red-contrib-telegrambot@7.1.1
 RUN npm install node-red-contrib-influxdb@0.4.0
 RUN npm install node-red-contrib-throttle@0.1.6
 RUN npm install node-red-contrib-socketio@1.0.7
+RUN npm install node-red-node-random
+RUN npm install node-red-node-suncalc
+
