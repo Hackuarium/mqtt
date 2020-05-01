@@ -82,3 +82,12 @@ mosquitto_sub -h "localhost" -t "abcd/efgh"
 `show databases`
 `use data`
 `select * from random`
+
+
+## Problems with Fedora 31
+
+https://github.com/docker/for-linux/issues/219
+
+$ sudo dnf install -y grubby
+$ sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
+$ sudo reboot
