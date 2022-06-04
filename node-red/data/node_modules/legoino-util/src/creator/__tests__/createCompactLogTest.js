@@ -12,13 +12,13 @@ test('createCompactLog', () => {
           A: 1,
           B: 2,
           C: 3,
-          D: 4
+          D: 4,
         },
         eventId: 5,
         eventValue: 6,
-        deviceId: 0xaaaa - 65536
+        deviceId: 0xaaaa - 65536,
       },
-      4
-    )
+      4,
+    ),
   ).toBe('0000FFFF00007FFF000100020003000400050006AAAA87');
 });

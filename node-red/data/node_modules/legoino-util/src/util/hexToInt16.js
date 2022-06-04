@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function hexToInt16(hexa) {
-  var value = parseInt(`${hexa}`, 16);
+  let value = parseInt(`${hexa}`, 16);
   if (value > 32767) {
     return (65536 - value) * -1;
   }

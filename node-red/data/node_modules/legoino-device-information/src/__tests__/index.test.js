@@ -15,4 +15,7 @@ describe('legoino-device-information test', () => {
   it('Solar2015', () => {
     expect(info.Solar2015).toMatchSnapshot();
   });
+  it('fromDeviceID', () => {
+    expect(info.fromDeviceID('6b')).toMatchSnapshot();
+  });
 });
