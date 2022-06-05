@@ -4,6 +4,6 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "legoino-util": "^1.8.0"
+    "legoino-util": "^2.0.1"
   }
 }

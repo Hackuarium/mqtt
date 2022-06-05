@@ -1,10 +1,10 @@
 'use strict';
 
-const createCompactLog = require('../createCompactLog');
+const createMultiLog = require('../createMultiLog');
 
-test('createCompactLog', () => {
+test('createMultiLog', () => {
   expect(
-    createCompactLog(
+    createMultiLog(
       {
         id: 65535,
         epoch: 32767,
