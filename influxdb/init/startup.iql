@@ -1,0 +1,12 @@
+CREATE DATABASE data;
+
+USE data;
+
+DROP CONTINUOUS QUERY Beemos_hourly_cq ON data;
+DROP CONTINUOUS QUERY Beemos_daily_cq ON data;
+
+CREATE CONTINUOUS QUERY Beemos_hourly_cq ON data BEGIN SELECT mean(externalHumidity) AS externalHumidity, mean(interalHumidity) AS interalHumidity, mean(externalTemperature) AS externalTemperature, mean(internalTemperature) AS internalTemperature INTO Beemos_hourly FROM Beemos GROUP BY time(1h) END
+CREATE CONTINUOUS QUERY Beemos_daily_cq ON data BEGIN SELECT mean(externalHumidity) AS externalHumidity, mean(interalHumidity) AS interalHumidity, mean(externalTemperature) AS externalTemperature, mean(internalTemperature) AS internalTemperature INTO Beemos_daily FROM Beemos GROUP BY time(1d) END
+
+SELECT mean(externalHumidity) AS externalHumidity, mean(interalHumidity) AS interalHumidity, mean(externalTemperature) AS externalTemperature, mean(internalTemperature) AS internalTemperature INTO Beemos_hourly FROM Beemos GROUP BY time(1h);
+SELECT mean(externalHumidity) AS externalHumidity, mean(interalHumidity) AS interalHumidity, mean(externalTemperature) AS externalTemperature, mean(internalTemperature) AS internalTemperature INTO Beemos_daily FROM Beemos GROUP BY time(1d);

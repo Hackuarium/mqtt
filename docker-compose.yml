@@ -8,12 +8,12 @@ services:
     volumes:
       - ./node-red/data:/data
     user: root
-#  mongo:
-#   image: "mongo"
-#   restart: always
-#   expose:
-#     - 27017
-#   user: root
+  #  mongo:
+  #   image: "mongo"
+  #   restart: always
+  #   expose:
+  #     - 27017
+  #   user: root
   mosca:
     image: "matteocollina/mosca:v2.8.3"
     restart: always
@@ -25,12 +25,13 @@ services:
       - ./mosca/db:/db
     user: root
   influxdb:
-    image: "influxdb:1.7.9"
+    image: "influxdb:1.8.10"
     restart: always
     expose:
       - 8086
     volumes:
       - ./influxdb/db:/var/lib/influxdb
+      - ./influxdb/init:/docker-entrypoint-initdb.d # startup scripts
     environment:
       INFLUXDB_DB: data
       INFLUXDB_HTTP_AUTH_ENABLED: "false"
