@@ -8,21 +8,16 @@ services:
     volumes:
       - ./node-red/data:/data
     user: root
-  #  mongo:
-  #   image: "mongo"
-  #   restart: always
-  #   expose:
-  #     - 27017
-  #   user: root
-  mosca:
-    image: "matteocollina/mosca:v2.8.3"
+  mosquitto:
+    image: "eclipse-mosquitto:2.0.14"
     restart: always
     ports:
       - 1883:1883
     expose:
       - 1883
     volumes:
-      - ./mosca/db:/db
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
     user: root
   influxdb:
     image: "influxdb:1.8.10"
@@ -33,10 +28,6 @@ services:
       - ./influxdb/db:/var/lib/influxdb
       - ./influxdb/init:/docker-entrypoint-initdb.d # startup scripts
     environment:
-      INFLUXDB_DB: data
       INFLUXDB_HTTP_AUTH_ENABLED: "false"
-      INFLUXDB_ADMIN_USER: admin
-      INFLUXDB_ADMIN_PASSWORD: admin
-      INFLUXDB_USER: user
-      INFLUXDB_USER_PASSWORD: user
     user: root
+
