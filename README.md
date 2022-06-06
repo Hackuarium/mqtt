@@ -2,11 +2,12 @@
 
 The goal of this project is to create a fast setup of a docker mqtt broker in javascript.
 
-In this project we are using 4 diffent docker images:
-* node-red
-* mosca
-* mongo
-* influxdb
+In this project we are using 4 different docker images:
+
+- node-red
+- mosquitto (mqtt broker)
+- mongo
+- influxdb
 
 ## setup a new server
 
@@ -26,6 +27,7 @@ Add the following rule in iptables:
 Using an apache proxy allows to play with the hostname.
 
 vi /etc/httpd/conf.d/mqtt.conf
+
 ```
 <VirtualHost *:80>
     ServerName 	mqtt.beemos.org
@@ -36,7 +38,7 @@ vi /etc/httpd/conf.d/mqtt.conf
 	ProxyPassReverse        "/comms"        "ws://localhost:1880/comms"
 	ProxyPass               "/"             "http://localhost:1880/"
 	ProxyPassReverse        "/"             "http://localhost:1880/"
-</VirtualHost>  
+</VirtualHost>
 ```
 
 ### Starting the server
@@ -45,10 +47,7 @@ vi /etc/httpd/conf.d/mqtt.conf
 
 ## Testing
 
-
-
 ## Some other tools
-
 
 Node-red will save all the data in the folder `node-red/data`
 
@@ -73,7 +72,6 @@ mosquitto_pub --retain -m "Test" -t "abcd/efgh"
 
 mosquitto_sub -h "localhost" -t "abcd/efgh"
 
-
 ## Connect to influxdb for debug
 
 `docker-compose exec influxdb bash`
@@ -82,7 +80,6 @@ mosquitto_sub -h "localhost" -t "abcd/efgh"
 `show databases`
 `use data`
 `select * from random`
-
 
 ## Problems with Fedora 31
 
