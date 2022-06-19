@@ -30,4 +30,14 @@ services:
     environment:
       INFLUXDB_HTTP_AUTH_ENABLED: "false"
     user: root
-
+  mongo:
+    image: "mongo:5.0"
+    restart: always
+    expose:
+      - 27017
+    environment:
+      MONGO_INITDB_DATABASE: data
+    volumes:
+      - ./mongo/db/:/data/db/
+      - ./mongo/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/ # startup scripts
+    user: root
